@@ -6,6 +6,11 @@
 - ⚙️ [AIOS Specification](../aios/AIOS.md)
 - 🏛️ [Foundation](../00_Foundation/README.md)
 - 🎮 [Browser Prototype](../../app/index.html)
+- 🧭 [Project Plan](../../PROJECT_PLAN.md)
+- 📦 [Project State](../../PROJECT_STATE.json)
+- 🤝 [Handover](../../HANDOVER.md)
+- ❓ [Open Questions](../../OPEN_QUESTIONS.md)
+- ❤️ [Repository Health](../../REPOSITORY_HEALTH.md)
 
 ---
 
@@ -23,6 +28,12 @@
 - Placeholder transition implemented after the user enters the experience.
 - No unconfirmed story event has been implemented.
 
+## Current Priority
+
+- `TASK-0001` completed: mandatory AIOS continuity artifacts are now present.
+- `TASK-0002` completed: source intake and canon-authority mapping is recorded in [Source Intake](Source_Intake_2026-07-27.md).
+- `TASK-0003` is blocked pending founder resolution of [OQ-0001](../../OPEN_QUESTIONS.md) and OQ-0004 before creative canon enters the repository.
+
 ## Pending
 
 - Story Bible.
@@ -34,3 +45,11 @@
 - Final art assets and licensing decisions.
 - Audio assets and production specifications.
 - Deployment target and technical stack beyond the browser prototype.
+
+## Operational Records
+
+- [Project Plan](../../PROJECT_PLAN.md) owns task sequence and verification state.
+- [Project State](../../PROJECT_STATE.json) owns machine-readable current status.
+- [Handover](../../HANDOVER.md) owns session resume guidance.
+- [Open Questions](../../OPEN_QUESTIONS.md) owns unresolved decisions.
+- [Debt Register](../../DEBT_REGISTER.md) owns visible production debt.

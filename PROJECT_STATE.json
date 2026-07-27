@@ -1,0 +1,14 @@
+{
+  "project": "Until Sunrise",
+  "version": "0.1.0",
+  "phase": "Pre-Production",
+  "current_sprint": "Source Intake and Authority Mapping",
+  "current_task": "Founder decision required: resolve OQ-0001 and OQ-0004 before knowledge-document production.",
+  "completion": 10,
+  "repository_health": 43,
+  "blocked": true,
+  "blocking_reason": "Approved canon scope and the 2026 relationship timeline/end-point have not been recorded in the repository.",
+  "last_agent": "Codex",
+  "last_update": "2026-07-27T00:00:00+07:00",
+  "next_recommended_task": "Founder: resolve OQ-0001 and OQ-0004. Then begin TASK-0003: Establish knowledge-document production sequence."
+}
