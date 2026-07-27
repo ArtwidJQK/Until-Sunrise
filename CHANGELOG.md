@@ -2,6 +2,16 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.6.1] - 2026-07-28
+
+### Added
+
+- Lazy-loaded Three.js atmospheric layer with constellation paths, sparkles, and slow camera drift.
+
+### Changed
+
+- Split 3D dependencies from the initial product-app bundle.
+
 ## [0.6.0] - 2026-07-27
 
 ### Added

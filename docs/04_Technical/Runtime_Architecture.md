@@ -18,8 +18,10 @@ The product app does not replace the validated vertical slice. It is the product
 
 - React 19 and TypeScript via Vite.
 - Framer Motion for scene transitions.
+- Three.js through React Three Fiber and Drei for a lazily loaded 3D constellation, particle field, and slow camera drift behind the cinematic UI.
 - CSS particle field, cinematic letterboxing, parallax-ready background composition, subtitles, and reduced-motion support.
 - Web Audio API produces an opt-in synthesized ambient tone; no unlicensed audio is embedded.
+- The Three.js layer respects `prefers-reduced-motion` and is code-split from the initial application bundle.
 - Story content in `src/data/story.ts` is paraphrased from approved sources and carries source references.
 
 ## Backend

@@ -1,0 +1,1 @@
+.atmosphere-3d{position:fixed;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:.78}.atmosphere-3d canvas{width:100%!important;height:100%!important}.entry-card{z-index:3}.entry-vignette{z-index:1}@media(prefers-reduced-motion:reduce){.atmosphere-3d{display:none}}
