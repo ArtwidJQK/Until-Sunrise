@@ -1,5 +1,14 @@
 # Production Status
 
+## Quick Links
+
+- 🚀 [Bootloader](../../START_HERE.md)
+- ⚙️ [AIOS Specification](../aios/AIOS.md)
+- 🏛️ [Foundation](../00_Foundation/README.md)
+- 🎮 [Browser Prototype](../../app/index.html)
+
+---
+
 ## Confirmed
 
 - Project type: Interactive Cinematic Memory Experience.
