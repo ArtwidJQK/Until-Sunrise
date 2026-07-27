@@ -14,6 +14,7 @@ This folder contains production-ready scene specifications for *Until Sunrise*. 
 | Scene ID | Title / Name | Status | Specification | Primary Focus |
 | --- | --- | --- | --- | --- |
 | **SCN-001** | The Opening Memory Space | Production Ready | [`Scene_001_Specification.md`](Scene_001_Specification.md) | 2026 framing environment, memory observer role, room anchors, first transition |
+| **SCN-002** | The Reopened Contact | Production Ready | [`Scene_002_Specification.md`](Scene_002_Specification.md) | 2026 reconnection ordering, reopened contact, bridge into ordinary daily routines |
 
 ---
 

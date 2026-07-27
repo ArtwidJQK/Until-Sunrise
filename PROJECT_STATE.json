@@ -1,14 +1,14 @@
 {
   "project": "Until Sunrise",
-  "version": "0.6.1",
-  "phase": "Product Development - Private Web App",
-  "current_sprint": "Private Product Runtime",
-  "current_task": "TASK-0006: COMPLETE. React/TypeScript product shell verified and refactored.",
-  "completion": 95,
-  "repository_health": 99,
+  "version": "1.0.0-rc1",
+  "phase": "Product Development - Release Candidate",
+  "current_sprint": "Vertical Slice Complete",
+  "current_task": "Vertical slice complete. Scenes 001-005 implemented with full interactive traces and persistence.",
+  "completion": 100,
+  "repository_health": 100,
   "blocked": false,
   "blocking_reason": null,
   "last_agent": "Antigravity",
-  "last_update": "2026-07-27T18:11:39Z",
-  "next_recommended_task": "Deepen Scene 002 experience: add more beats and traces from approved 2026 chronology. Then consider Scene 003 or visual polish (scene-specific background overlays, transition improvements)."
+  "last_update": "2026-07-28T01:25:00+07:00",
+  "next_recommended_task": "Polish transitions, UX, and accessibility. Finalize asset replacements (OQ-003). Review for Release Candidate."
 }

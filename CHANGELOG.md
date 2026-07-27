@@ -2,6 +2,18 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [1.0.0-rc1] - 2026-07-28
+
+### Added
+
+- Fully mapped `SCN-003`, `SCN-004`, and `SCN-005` data to complete the 5-scene vertical slice storyline.
+- Scene-specific visual overlays (glows, pulses) controlled by `scene.id` for environmental storytelling without external assets.
+
+### Changed
+
+- Adjusted `App.tsx` scene progression to dynamically calculate progress percentage based on all variable scene beats, rather than a hardcoded denominator.
+- Transitioned project to Release Candidate phase.
+
 ## [0.6.1] - 2026-07-28
 
 ### Added

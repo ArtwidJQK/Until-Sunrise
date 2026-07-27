@@ -1,4 +1,4 @@
-﻿import {
+import {
   FormEvent,
   lazy,
   startTransition,
@@ -279,6 +279,29 @@ export default function App() {
         ))}
       </div>
 
+      {/* ── Scene Specific Visual Overlays ──────────────────────────────────── */}
+      {scene.id === "SCN-002" && (
+        <>
+          <div className="scene-glow glow-002" aria-hidden="true" />
+          <div className="scene-pulse" aria-hidden="true" />
+        </>
+      )}
+      {scene.id === "SCN-003" && (
+        <>
+          <div className="scene-glow glow-003" aria-hidden="true" />
+        </>
+      )}
+      {scene.id === "SCN-004" && (
+        <>
+          <div className="scene-glow glow-004" aria-hidden="true" />
+        </>
+      )}
+      {scene.id === "SCN-005" && (
+        <>
+          <div className="scene-glow glow-005" aria-hidden="true" />
+        </>
+      )}
+
       <header className="topbar">
         <div className="wordmark">
           <Heart size={14} fill="currentColor" /> until sunrise
@@ -400,8 +423,8 @@ export default function App() {
           <span
             style={{
               width: `${
-                (((sceneIndex * 4) + beatIndex + 1) /
-                  ((scenes.length * 4) - 1)) *
+                ((scenes.slice(0, sceneIndex).reduce((acc, s) => acc + s.beats.length, 0) + beatIndex + 1) /
+                  (scenes.reduce((acc, s) => acc + s.beats.length, 0))) *
                 100
               }%`,
             }}
