@@ -80,3 +80,18 @@ Last updated: 2026-07-27
 | Completion | 20% |
 | Verification status | In progress; specification complete, module layout declared. |
 | Blocking risks | None |
+
+### TASK-0006: Build private React product shell
+
+| Field | Value |
+| --- | --- |
+| Status | Complete |
+| Priority | P5 - Product implementation |
+| Owner | Codex |
+| Description | Build a React/TypeScript storytelling application with private single-account bootstrap, backend progress persistence, cinematic chapter player, and source-backed story flow. |
+| Dependencies | FD-0001 through FD-0005, Knowledge Layer, Node.js runtime, asset policy constraints. |
+| Expected output | Verified Vite build, local Express/SQLite server, account bootstrap/login, saved scene progress, and cinematic chapter experience. |
+| Verification | `npm.cmd run build` passes; `GET /api/health` returns `{"ok":true}`; Vite root returns HTTP 200. |
+| Completion | 100% |
+| Verification status | Passed on 2026-07-27. |
+| Blocking risks | Final art, recorded audio, detailed Scene 002 onward specifications, and deployment secrets remain separate production work. |

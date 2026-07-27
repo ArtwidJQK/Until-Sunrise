@@ -2,6 +2,21 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.6.0] - 2026-07-27
+
+### Added
+
+- React/TypeScript/Vite product application with cinematic chapter player.
+- Private single-account bootstrap and login backed by Express, bcrypt, JWT, and SQLite progress storage.
+- Generated original bedroom key visual at `assets/bedroom-opening.png`.
+- Product runtime architecture and local-development documentation.
+
+### Verified
+
+- Production Vite build passes.
+- Progress server health endpoint passes.
+- Vite dev server returns HTTP 200.
+
 ## [0.5.0] - 2026-07-27
 
 ### Added

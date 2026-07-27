@@ -2,6 +2,20 @@
 
 This is an append-only record. Corrections and supersessions must be added as new entries.
 
+## DEC-0004
+
+| Field | Value |
+| --- | --- |
+| Date | 2026-07-27 |
+| Category | Product runtime |
+| Description | Add a separate React/TypeScript product shell with a private one-account backend and saved scene progress, while preserving the existing `app/` vertical slice. |
+| Reason | Founder authorized a private storytelling web/app with modern frontend motion and persistent account progress. |
+| Alternatives considered | Rewrite the existing vertical slice; rejected because it is a documented and playable prototype. |
+| Impact | Adds root Vite runtime, `server/` API, package scripts, generated original key visual, and architecture documentation. |
+| Affected files | `index.html`, `src/`, `server/`, `package.json`, `assets/bedroom-opening.png`, `docs/04_Technical/Runtime_Architecture.md`, runtime state artifacts. |
+| Approved by | Founder request on 2026-07-27; FD-0005 for non-canonical presentation detail. |
+| Status | Active |
+
 ## DEC-0003
 
 | Field | Value |

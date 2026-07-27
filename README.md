@@ -13,7 +13,8 @@ Interactive Cinematic Memory Experience — Web prototype and production documen
 - 📊 **Production Status:** [`docs/01_Studio/Production_Status.md`](./docs/01_Studio/Production_Status.md)
 - 📚 **Knowledge Layer:** [`docs/02_Knowledge/README.md`](./docs/02_Knowledge/README.md)
 - 🎬 **Scene Specifications:** [`docs/03_Scenes/README.md`](./docs/03_Scenes/README.md)
-- 🎮 **Prototype Entry Point:** [`app/index.html`](./app/index.html) (Open in browser, no build step required)
+- 🎮 **Vertical Slice:** [`app/index.html`](./app/index.html) (vanilla browser prototype)
+- ✨ **Product App:** React/Vite application at repository root (see Run Locally).
 
 ---
 
@@ -42,12 +43,21 @@ Until-Sunrise/
 
 ---
 
+## Run Locally
+
+```powershell
+npm.cmd run server
+npm.cmd run dev
+```
+
+Open `http://localhost:5173`. On the first visit, create the private password for Ngọc Anh. The local server stores a password hash and the current story scene in SQLite. Set `JWT_SECRET` before deployment; `.env.example` lists supported variables.
+
 ## Current Scope
 
-- Opening login experience prototype.
-- Gentle memory-oriented visual language.
-- Scene 001 Specification (`SCN-001` — The Opening Memory Space) complete in [`docs/03_Scenes/Scene_001_Specification.md`](./docs/03_Scenes/Scene_001_Specification.md).
-- Unconfirmed story events, dialogue, combat, or puzzle logic remain `Pending`.
+- Scene 001 vertical slice in [`app/`](./app/).
+- Private React/Vite product shell with account bootstrap, login, server-side progress, cinematic chapter flow, animated transitions, particles, letterboxing, subtitles, and opt-in Web Audio ambience.
+- Scene 001 Specification (`SCN-001` — The Opening Memory Space) in [`docs/03_Scenes/Scene_001_Specification.md`](./docs/03_Scenes/Scene_001_Specification.md).
+- Final character art, recorded audio, deployment, and post-2026 story remain `Pending`.
 
 ---
 

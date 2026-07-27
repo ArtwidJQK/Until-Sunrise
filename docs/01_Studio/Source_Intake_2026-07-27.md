@@ -1,7 +1,7 @@
 # Source Intake: Founder-Provided Until Sunrise Documents
 
-Status: Draft
-Authority: Source evidence only; this document does not create canon
+Status: Approved
+Authority: FD-0001 canonical source registry; derivative documents never override sources
 Owner: Founder
 Task: `TASK-0002`
 Recorded: 2026-07-27
@@ -14,10 +14,10 @@ This intake preserves the existence and production relevance of two founder-prov
 
 | ID | Source | Supplied | Nature | Repository status |
 | --- | --- | --- | --- | --- |
-| SRC-001 | `C:\Users\dxem1\Downloads\Until Sunrise.docx` | 2026-07-27 | Composite project, visual-reference, experience, relationship, and character source material. | Reviewed; not yet canon. |
-| SRC-002 | `C:\Users\dxem1\Downloads\Until Sunrise 2.docx` | 2026-07-27 | Character-conflict supplement concerning both main characters and a non-judgmental relationship rule. | Reviewed; not yet canon. |
+| SRC-001 | `C:\Users\dxem1\Downloads\Until Sunrise.docx` | 2026-07-27 | Composite project, visual-reference, experience, relationship, and character source material. | Canonical under FD-0001. |
+| SRC-002 | `C:\Users\dxem1\Downloads\Until Sunrise 2.docx` | 2026-07-27 | Character-conflict supplement concerning both main characters and a non-judgmental relationship rule. | Canonical under FD-0001. |
 
-Neither source contains a repository version, approval record, document owner, or change history. Their contents must therefore be treated as founder-provided evidence awaiting repository approval, not as a replacement for the repository's knowledge layer.
+The exact canonical file identities are preserved in `docs/02_Knowledge/Canonical_Source_Registry.md`. Knowledge Documents remain derivative even when their status is approved.
 
 ## Evidence Categories
 

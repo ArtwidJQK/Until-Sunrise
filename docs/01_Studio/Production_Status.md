@@ -34,8 +34,8 @@
 ## Current Priority
 
 - Vertical Slice 001 complete and playable.
-- Product Development mode active: software implementation prioritized over documentation expansion.
-- Next priority: Scene 002 development & asset pipeline expansion.
+- Private React product shell complete: account bootstrap, login, server-side progress, cinematic chapter flow, and motion system are available at `http://127.0.0.1:5173` during local development.
+- Next priority: Scene 002 development, then migration from high-level source-backed chapter beats to scene-approved content and final asset production.
 
 ## Operational Records
 
