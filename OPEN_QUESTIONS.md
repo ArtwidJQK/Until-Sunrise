@@ -1,26 +1,8 @@
 # Open Questions
 
-## OQ-0001: What is the approval status of the two founder-provided Word documents?
+## Active Open Questions
 
-| Field | Value |
-| --- | --- |
-| Why it matters | Their claims may affect Story, Character, Timeline, World, and Experience documents. |
-| Blocking | Yes, for canon promotion, scene design, and narrative implementation. |
-| Possible sources | Founder decision; source-intake review; approved repository decision record. |
-| Recommended resolution | Complete TASK-0002, then record which claims are approved canon, draft material, or out of scope. |
-| Status | Open |
-
-## OQ-0004: What is the approved 2026 relationship timeline and narrative endpoint?
-
-| Field | Value |
-| --- | --- |
-| Why it matters | SRC-001 includes material about a renewed 2026 relationship and later reflective/separation framing. A Timeline and Story Bible require the exact intended scope and ordering. |
-| Blocking | Yes, for the Timeline, Story Bible, Character arcs, scenes, dialogue, and ending design. |
-| Possible sources | Founder decision informed by SRC-001. |
-| Recommended resolution | Record the permitted 2026 events, their order, the narrative endpoint, and any material that must remain private or out of scope. |
-| Status | Open |
-
-## OQ-0002: What is the intended technical delivery target after the static browser prototype?
+### OQ-0002: What is the intended technical delivery target after the static browser prototype?
 
 | Field | Value |
 | --- | --- |
@@ -30,7 +12,7 @@
 | Recommended resolution | Decide after the first approved scene specification defines interaction and rendering requirements. |
 | Status | Open |
 
-## OQ-0003: What rights and licensing policy governs named plush-character references and final assets?
+### OQ-0003: What rights and licensing policy governs named plush-character references and final assets?
 
 | Field | Value |
 | --- | --- |
@@ -39,3 +21,25 @@
 | Possible sources | Founder asset policy; legal/licensing review. |
 | Recommended resolution | Define an asset ownership and licensing policy before importing final art, music, or third-party character material. |
 | Status | Open |
+
+---
+
+## Resolved Open Questions
+
+### OQ-0001: What is the approval status of the two founder-provided Word documents?
+
+| Field | Value |
+| --- | --- |
+| Why it matters | Their claims affect Story, Character, Timeline, World, and Experience documents. |
+| Blocking | No longer blocking. |
+| Resolution | **Resolved via FD-0001 & FD-0003**: `SRC-001` and `SRC-002` are approved by Founder Decision FD-0001 as the official canonical source material for Until Sunrise. AI-generated Knowledge Documents serve as derivative documentation. |
+| Status | Resolved (2026-07-27) |
+
+### OQ-0004: What is the approved 2026 relationship timeline and narrative endpoint?
+
+| Field | Value |
+| --- | --- |
+| Why it matters | Story Bible and Timeline scope boundary. |
+| Blocking | No longer blocking. |
+| Resolution | **Resolved via FD-0002**: The 2026 storyline is approved as the narrative endpoint for current production. The story remains open-ended; 2026 is not a final franchise ending. Material beyond 2026 is undefined until new Founder-approved source material is provided. |
+| Status | Resolved (2026-07-27) |

@@ -2,6 +2,20 @@
 
 This is an append-only record. Corrections and supersessions must be added as new entries.
 
+## DEC-0003
+
+| Field | Value |
+| --- | --- |
+| Date | 2026-07-27 |
+| Category | Founder Canon Authority |
+| Description | Record Founder Decision Package (FD-0001 to FD-0005): SRC-001 and SRC-002 approved as canonical sources; 2026 storyline established as narrative endpoint; Knowledge Documents authorized as derivative documentation; OQ-0001 and OQ-0004 resolved. |
+| Reason | Explicit Founder authorization received approving source documents, narrative endpoint, derivative authority rules, conflict resolution protocol, and minor creative expansion guidelines. |
+| Alternatives considered | None. Founder decisions carry highest authority (AIOS Part VI Governance). |
+| Impact | Resolves OQ-0001 and OQ-0004. Unblocks TASK-0003. Authorizes construction of the complete Knowledge Document layer. |
+| Affected files | `OPEN_QUESTIONS.md`, `PROJECT_STATE.json`, `PROJECT_PLAN.md`, `HANDOVER.md`, `CONTEXT_SUMMARY.md`, `docs/01_Studio/Production_Status.md`, `docs/02_Knowledge/*` |
+| Approved by | Founder (Founder Decision Package FD-0001 through FD-0005) |
+| Status | Active |
+
 ## DEC-0002
 
 | Field | Value |

@@ -1,34 +1,34 @@
 # Debt Register
 
-## DOC-0001
-
-| Field | Value |
-| --- | --- |
-| Category | Documentation debt |
-| Description | Required knowledge documents, technical architecture, QA strategy, and asset pipeline documentation do not exist. |
-| Origin | Repository bootstrap state. |
-| Affected files | `docs/`, `PROJECT_PLAN.md` |
-| Risk | High likelihood / High impact |
-| Severity | High |
-| Estimated effort | Multi-sprint |
-| Owner | Unassigned |
-| Status | Open |
-| Resolution plan | Complete source intake, establish authority, then create approved documents in dependency order. |
-
 ## KNO-0001
 
 | Field | Value |
 | --- | --- |
 | Category | Knowledge debt |
-| Description | Detailed source claims in the two founder-provided Word documents are inventoried but not approved as repository canon. |
+| Description | Source claims in the two founder-provided Word documents are now approved under Founder Decision Package FD-0001 to FD-0005. |
 | Origin | External source material supplied on 2026-07-27. |
-| Affected files | Future Story, Character, Timeline, World, and Experience documents. |
-| Risk | High likelihood / Critical impact |
-| Severity | Critical |
-| Estimated effort | One focused documentation task plus founder review. |
-| Owner | Unassigned |
-| Status | Open |
-| Resolution plan | Resolve OQ-0001 and OQ-0004, capture founder decisions in the repository, then create the approved knowledge documents. |
+| Affected files | `docs/02_Knowledge/*` |
+| Risk | Resolved |
+| Severity | Low |
+| Estimated effort | Complete |
+| Owner | Antigravity |
+| Status | **Resolved (2026-07-27)** |
+| Resolution plan | Resolved by Founder Decisions FD-0001..FD-0005 and construction of complete Knowledge Document layer. |
+
+## DOC-0001
+
+| Field | Value |
+| --- | --- |
+| Category | Documentation debt |
+| Description | Knowledge Document layer constructed. Scene specifications, technical architecture, and QA strategy pending. |
+| Origin | Repository bootstrap state. |
+| Affected files | `docs/`, `PROJECT_PLAN.md` |
+| Risk | Low likelihood / Medium impact |
+| Severity | Low |
+| Estimated effort | Ongoing per sprint |
+| Owner | AI Agent |
+| Status | In Progress |
+| Resolution plan | Knowledge Layer complete. Next step: create Scene Specifications downstream. |
 
 ## EXP-0001
 
