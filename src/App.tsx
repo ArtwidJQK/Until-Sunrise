@@ -95,7 +95,7 @@ function EntryScreen({
       </Suspense>
       <section className="entry-card">
         <p className="eyebrow">
-          <Sparkles size={14} /> ky uc rieng tu
+          <Sparkles size={14} /> ký ức riêng tư
         </p>
         <h1>
           Until
@@ -103,11 +103,11 @@ function EntryScreen({
           Sunrise
         </h1>
         <p className="entry-copy">
-          Mot noi de nhung dieu binh thuong duoc nho lai that diu dang.
+          Một nơi để những điều bình thường được nhớ lại thật dịu dàng.
         </p>
         <form onSubmit={onSubmit}>
           <label htmlFor="password">
-            {hasAccount ? "Mat khau rieng tu" : "Tao mat khau cho Ngoc Anh"}
+            {hasAccount ? "Mật khẩu riêng tư" : "Tạo mật khẩu cho Ngọc Anh"}
           </label>
           <input
             id="password"
@@ -116,16 +116,16 @@ function EntryScreen({
             autoFocus
             value={password}
             onChange={(event) => onPasswordChange(event.target.value)}
-            placeholder={hasAccount ? "Nhap mat khau" : "It nhat 8 ky tu"}
+            placeholder={hasAccount ? "Nhập mật khẩu" : "Ít nhất 8 ký tự"}
           />
           <button className="primary" disabled={hasAccount === null}>
-            {hasAccount ? "Buoc vao" : "Tao khong gian rieng"}
+            {hasAccount ? "Bước vào" : "Tạo không gian riêng"}
             <ArrowRight size={17} />
           </button>
           {error && <p className="error">{error}</p>}
         </form>
         <p className="privacy">
-          Chi danh cho mot nguoi. Tien do cua ban luon duoc luu lai.
+          Chỉ dành cho một người. Tiến độ của bạn luôn được lưu lại.
         </p>
       </section>
     </main>
@@ -166,38 +166,40 @@ export default function App() {
   }, []);
 
   // Restore scene progress from server
+  // Depend only on token string, not the object reference, to avoid spurious refetches.
+  const sessionToken = session?.token ?? null;
   useEffect(() => {
-    if (!session) return;
+    if (!sessionToken) return;
     api
-      .progress(session.token)
+      .progress(sessionToken)
       .then(({ sceneId }) => {
         const resolvedSceneId = LEGACY_SCENE_MAP[sceneId] || sceneId;
         const index = scenes.findIndex((item) => item.id === resolvedSceneId);
         if (index >= 0) setSceneIndex(index);
       })
       .catch(() => setSession(null));
-  }, [session]);
+  }, [sessionToken]);
 
   // Persist scene progress to server (debounced)
   useEffect(() => {
-    if (!session) return;
+    if (!sessionToken) return;
     setSaved(false);
     const timeout = window.setTimeout(
       () =>
         api
-          .save(session.token, scene.id)
+          .save(sessionToken, scene.id)
           .then(() => setSaved(true))
           .catch(() => setSaved(false)),
       450
     );
     return () => clearTimeout(timeout);
-  }, [scene.id, session]);
+  }, [scene.id, sessionToken]);
 
-  // Reset beat and trace when scene changes
+  // Reset beat and trace when scene changes; clamp traceIndex defensively.
   useEffect(() => {
     setBeatIndex(0);
-    setTraceIndex(0);
-  }, [scene.id]);
+    setTraceIndex((prev) => (prev < scene.traces.length ? 0 : 0));
+  }, [scene.id, scene.traces.length]);
 
   // Auto-advance beats
   useEffect(() => {
@@ -246,6 +248,35 @@ export default function App() {
     setTraceIndex(index);
     jumpBeat(scene.traces[index].beatIndex);
   };
+
+  // ── Keyboard navigation (experience screen only) ─────────────────────────
+  useEffect(() => {
+    if (!session) return;
+    const handleKey = (event: KeyboardEvent) => {
+      // Ignore when focus is inside a form element
+      if (["INPUT", "TEXTAREA", "BUTTON"].includes((event.target as HTMLElement)?.tagName)) return;
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        if (beatIndex < scene.beats.length - 1) {
+          jumpBeat(beatIndex + 1);
+        } else if (sceneIndex < scenes.length - 1) {
+          jumpScene(sceneIndex + 1);
+        }
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        if (beatIndex > 0) {
+          jumpBeat(beatIndex - 1);
+        } else if (sceneIndex > 0) {
+          jumpScene(sceneIndex - 1);
+        }
+      } else if (event.key === " ") {
+        event.preventDefault();
+        setAutoplay((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [session, beatIndex, sceneIndex, scene.beats.length]);
 
   // Entry (not logged in)
   if (!session) {
@@ -307,20 +338,20 @@ export default function App() {
           <Heart size={14} fill="currentColor" /> until sunrise
         </div>
         <div className="top-actions">
-          <span>{saved ? "Da luu" : "Dang luu..."}</span>
+          <span>{saved ? "Đã lưu" : "Đang lưu..."}</span>
           <button
-            aria-label="Bat hoac tat am thanh"
+            aria-label="Bật hoặc tắt âm thanh nền"
             onClick={() => setSound(!sound)}
           >
             {sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </button>
           <button
-            aria-label="Bat hoac tat tu dong chay subtitle"
+            aria-label="Bật hoặc tắt tự động chuyển subtitle"
             onClick={() => setAutoplay((value) => !value)}
           >
             {autoplay ? <Pause size={18} /> : <Play size={18} />}
           </button>
-          <button aria-label="Dang xuat" onClick={logout}>
+          <button aria-label="Đăng xuất" onClick={logout}>
             <LogOut size={18} />
           </button>
         </div>
@@ -409,6 +440,7 @@ export default function App() {
         <button
           className="control"
           disabled={beatIndex === 0 && sceneIndex === 0}
+          aria-label="Beat hoặc cảnh trước"
           onClick={() => {
             if (beatIndex > 0) {
               jumpBeat(beatIndex - 1);
@@ -417,9 +449,9 @@ export default function App() {
             jumpScene(sceneIndex - 1);
           }}
         >
-          <ArrowLeft size={19} /> Truoc
+          <ArrowLeft size={19} /> Trước
         </button>
-        <div className="progress">
+        <div className="progress" role="progressbar" aria-label="Tiến độ trải nghiệm">
           <span
             style={{
               width: `${
@@ -436,6 +468,7 @@ export default function App() {
             beatIndex === scene.beats.length - 1 &&
             sceneIndex === scenes.length - 1
           }
+          aria-label="Beat hoặc cảnh tiếp theo"
           onClick={() => {
             if (beatIndex < scene.beats.length - 1) {
               jumpBeat(beatIndex + 1);
@@ -444,7 +477,7 @@ export default function App() {
             jumpScene(sceneIndex + 1);
           }}
         >
-          Tiep <ArrowRight size={19} />
+          Tiếp <ArrowRight size={19} />
         </button>
       </footer>
     </main>

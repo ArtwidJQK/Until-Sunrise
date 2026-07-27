@@ -2,6 +2,25 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.7.0-beta] - 2026-07-28
+
+### Fixed
+
+- **BUG-001** — Removed double Atmosphere3D WebGL context mount from `main.tsx`. Was creating two simultaneous R3F canvases and leaking the Three.js context into the experience screen.
+- **BUG-002** — Narrowed `useEffect` dependency from `session` (object reference) to `session?.token` (string) to prevent spurious progress re-fetches on object identity changes.
+- **BUG-004** — Added missing `.scene-summary` and `.meta-row` CSS rules that were rendered in `App.tsx` but had zero styles.
+- **BUG-005/006/007** — Corrected all broken ASCII-escaped Vietnamese UI strings throughout `App.tsx` (labels, placeholders, buttons, save indicator, navigation arrows).
+- **BUG-008** — Added keyboard navigation to the experience screen: `ArrowRight` / `ArrowLeft` advance or rewind beats and scenes; `Space` toggles autoplay. Ignores events while focus is inside a button/input.
+- **BUG-009** — Added `Access-Control-Allow-Methods` header and `OPTIONS` preflight handler to `server/index.js`. `PUT /api/progress` was failing with a CORS error in production (preflight rejected).
+- **BUG-010** — Added `express.static(dist/)` and SPA fallback to `server/index.js`. The app can now be served from a single `node server/index.js` process in production.
+- **BUG-011** — Guarded `traceIndex` reset on scene change to prevent potential out-of-bounds access if the previous scene had more traces than the incoming scene.
+
+### Changed
+
+- Downgraded milestone from `1.0.0-rc1` to `0.7.0-beta`. A QA audit found 9 bugs; RC status was premature.
+- Added `aria-label` attributes to all navigation controls and progress bar.
+- Added CORS `ORIGIN` env-var support for configurable production origins.
+
 ## [1.0.0-rc1] - 2026-07-28
 
 ### Added
