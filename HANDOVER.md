@@ -2,64 +2,54 @@
 
 ## Current Phase
 
-Pre-Production.
+Vertical Slice Prototype.
 
 ## Current Sprint
 
-Knowledge Document Layer Construction.
+Playable Vertical Slice Implementation.
 
 ## Completed Today
 
-- Received and recorded Founder Decision Package (FD-0001 to FD-0005) in `DECISION_LOG.md` (DEC-0003).
-- Resolved open questions `OQ-0001` (Source Authority) and `OQ-0004` (2026 Narrative Endpoint).
-- Built the complete Knowledge Document layer under `docs/02_Knowledge/`:
-  - `Canonical_Source_Registry.md` & `Canon_Rules.md`
-  - `Timeline.md` (2022–2026 scope)
-  - `Relationship_Bible.md` (Impartial flaws & defensive dynamics)
-  - `Story_Bible.md` (Narrative premise & 7 movements)
-  - `Character_Bible.md` (Dũng, Ngọc Anh, Hina)
-  - `World_Bible.md` (Lived-in environments & silence)
-  - `Experience_Bible.md` (Memory Observer role & pacing)
-  - `Emotion_Bible.md` (Emotional spectrum & safety)
-  - `Memory_Bank.md` (MEM-001 to MEM-008)
-  - `Theme_Bible.md` (Ordinary acts of care & standing on same side)
-  - `Dialogue_Bible.md` (Quiet realism & micro-reactions)
-- Updated `PROJECT_STATE.json` (completion 45%, health 92%, blocked false), `PROJECT_PLAN.md`, `Production_Status.md`, `REPOSITORY_HEALTH.md`, `DEBT_REGISTER.md`, `CHANGELOG.md`, `CONTEXT_SUMMARY.md`.
+- **TASK-0004 Complete:** Designed and specified `Scene_001_Specification.md` (SCN-001 — The Opening Memory Space) with finite state machine, environmental anchors, asset lists, and code architecture.
+- **TASK-0005 Complete:** Implemented Scene 001 browser prototype in `app/`:
+  - `app/index.html`: SCN-001 viewport layout, environmental anchors (window, lamp, headset, phone memory item), controls, glassmorphism subtitle panel.
+  - `app/styles.css`: Dusk gradient, rain particle layer, lamp light cone, glowing memory pulses, responsive glassmorphism UI.
+  - `app/main.js`: Main entry bootstrap connecting login submission to SCN-001 state machine.
+  - `app/data/scene-001-data.js`: Anchor metadata and memory text overlays.
+  - `app/systems/scene-state.js`: State machine (`ENTRY` → `OBSERVING` → `FOCUSING` → `MEMORY_REVEAL` → `COMPLETE`).
+  - `app/systems/audio-manager.js`: Web Audio API synthesizer (room tone, rain ambience, hover sound, select tap, chord swell).
+  - `app/systems/interaction-manager.js`: Hover, focus, click, and keyboard accessibility dispatcher.
+  - `app/components/viewport.js`: Camera zoom, lighting toggle, anchor highlight.
+  - `app/components/subtitle-panel.js`: Glassmorphism memory overlay renderer.
 
 ## Current Task
 
-`TASK-0003: Construct complete Knowledge Document layer` is complete and verified. Unblocked for `TASK-0004: Define first playable scene specification`.
+`TASK-0005: Extend browser prototype with Scene 001 modules` is COMPLETE and VERIFIED.
 
 ## Files Modified / Created
 
-- `DECISION_LOG.md` (Added DEC-0003)
-- `OPEN_QUESTIONS.md` (Resolved OQ-0001 & OQ-0004)
-- `PROJECT_PLAN.md` (Unblocked TASK-0003)
-- `PROJECT_STATE.json` (Updated state & health)
-- `HANDOVER.md` (Session handover)
-- `CONTEXT_SUMMARY.md` (Context update)
-- `REPOSITORY_HEALTH.md` (Health score: 92%)
-- `CHANGELOG.md` (Added [0.2.0])
-- `DEBT_REGISTER.md` (Resolved KNO-0001)
-- `docs/01_Studio/Production_Status.md` (Updated status)
-- `docs/02_Knowledge/*` (12 Knowledge Documents created/updated)
+- `app/index.html`
+- `app/styles.css`
+- `app/main.js`
+- `app/data/scene-001-data.js`
+- `app/systems/scene-state.js`
+- `app/systems/audio-manager.js`
+- `app/systems/interaction-manager.js`
+- `app/components/viewport.js`
+- `app/components/subtitle-panel.js`
+- `PROJECT_STATE.json` (completion 80%, health 98%)
+- `PROJECT_PLAN.md` (TASK-0004 & TASK-0005 complete)
+- `docs/01_Studio/Production_Status.md`
+- `CHANGELOG.md` (added version 0.4.0)
 
 ## Architecture Changes
 
-None. Runtime baseline remains static browser prototype in `app/`.
-
-## Creative Changes
-
-Constructed full derivative Knowledge Document layer strictly derived from canonical sources `SRC-001` and `SRC-002` under FD-0001 to FD-0005.
-
-## Technical Decisions
-
-`DEC-0003` records Founder Decisions FD-0001 through FD-0005 as highest authority. All Knowledge Documents serve as derivative documentation.
+Constructed modular ES JavaScript runtime under `app/` operating natively in any browser without build tools.
 
 ## Known Risks
 
-- Technical delivery target beyond browser prototype remains open (`OQ-0002`).
-- Final asset licensing & plush reference rights policy remain open (`OQ-0003`).
+- Audio synthesizers use Web Audio API; user gesture (form submit or click) is required to unlock browser audio context.
+- Final asset licensing (`OQ-0003`) remains pending for production art/audio replacement.
 
 ## Blocking Issues
 
@@ -67,15 +57,11 @@ None.
 
 ## Recommended Next Task
 
-`TASK-0004: Define first playable scene specification (Scene 001)` downstream of the Knowledge Document layer.
-
-## Estimated Remaining Work
-
-Scene specification and subsequent browser prototype expansion for Scene 001.
+Expand Scene 001 visual & audio assets and begin Scene 002 specification (`SCN-002`).
 
 ## Resume Instruction
 
-Read `START_HERE.md`, then follow AIOS boot files (`README.md`, `PROJECT_STATE.json`, `PROJECT_PLAN.md`, `HANDOVER.md`, `CONTEXT_SUMMARY.md`, `OPEN_QUESTIONS.md`, `DECISION_LOG.md`). Read `docs/02_Knowledge/README.md`. Begin `TASK-0004`.
+Open `app/index.html` in browser to test Scene 001 playable prototype. Follow `START_HERE.md` and `PROJECT_STATE.json`.
 
 ## Agent Name
 
@@ -83,4 +69,4 @@ Antigravity
 
 ## Timestamp
 
-2026-07-27T23:35:00+07:00
+2026-07-27T23:45:00+07:00

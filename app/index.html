@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fff8f2" />
-    <title>Until Sunrise</title>
+    <meta name="theme-color" content="#2b2338" />
+    <title>Until Sunrise — Scene 001</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main id="app" class="app-shell" aria-labelledby="title">
+      <!-- LOGIN / ENTRY STAGE -->
       <section class="login-scene" data-screen="login">
         <div class="ambient ambient-left" aria-hidden="true"></div>
         <div class="ambient ambient-right" aria-hidden="true"></div>
@@ -48,13 +49,70 @@
         </footer>
       </section>
 
-      <section class="placeholder-scene" data-screen="placeholder" hidden>
-        <p class="eyebrow">A memory is waiting</p>
-        <h2 id="welcome-title">Chào mừng bạn.</h2>
-        <p class="placeholder-copy">Nội dung câu chuyện và scene đầu tiên đang được chuẩn bị.</p>
-        <button id="back-button" class="text-button" type="button">Quay lại</button>
+      <!-- SCENE 001 — THE OPENING MEMORY SPACE -->
+      <section class="scene-001-container" data-screen="scene-001" hidden tabindex="-1">
+        <!-- Room Viewport -->
+        <div id="room-viewport" class="room-viewport">
+          <!-- Room Background Light & Dusk Gradient -->
+          <div class="room-backdrop" aria-hidden="true"></div>
+
+          <!-- Window Anchor (Rain Ambience & Dusk Light) -->
+          <div class="anchor-item anchor-window" data-anchor="ANCHOR_WINDOW" tabindex="0" role="button" aria-label="Khung cửa sổ hoàng hôn">
+            <div class="window-pane">
+              <div class="dusk-sky"></div>
+              <div class="rain-overlay"></div>
+            </div>
+            <span class="anchor-tooltip">Cửa sổ hoàng hôn</span>
+          </div>
+
+          <!-- Desk Workspace Stage -->
+          <div class="desk-stage">
+            <!-- Lamp Anchor -->
+            <div class="anchor-item anchor-lamp" data-anchor="ANCHOR_LAMP" tabindex="0" role="button" aria-label="Đèn bàn">
+              <div class="lamp-body"></div>
+              <div class="lamp-light-cone"></div>
+              <span class="anchor-tooltip">Đèn bàn</span>
+            </div>
+
+            <!-- Gaming Headset Anchor -->
+            <div class="anchor-item anchor-headset" data-anchor="ANCHOR_HEADSET" tabindex="0" role="button" aria-label="Tai nghe gaming">
+              <div class="headset-graphic">
+                <span class="ear-cup cup-left"></span>
+                <span class="band"></span>
+                <span class="ear-cup cup-right"></span>
+              </div>
+              <span class="anchor-tooltip">Tai nghe gaming</span>
+            </div>
+
+            <!-- Primary Memory Object Anchor -->
+            <div class="anchor-item anchor-memory-main" data-anchor="ANCHOR_MAIN_OBJ" tabindex="0" role="button" aria-label="Vật thể ký ức">
+              <div class="phone-graphic">
+                <div class="screen-glow"></div>
+                <div class="pulse-ring"></div>
+              </div>
+              <span class="anchor-tooltip">Chạm để mở ký ức</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="scene-controls-bar">
+          <button id="audio-toggle-btn" class="control-btn" type="button" aria-label="Bật/Tắt âm thanh">
+            <span class="icon-audio">🔊</span> <span class="audio-label">Âm thanh: Bật</span>
+          </button>
+          <button id="back-to-login-btn" class="control-btn text-link" type="button">Quay lại</button>
+        </div>
+
+        <!-- Subtitle & Memory Reveal Panel (Glassmorphism Overlay) -->
+        <div id="subtitle-panel" class="subtitle-panel" hidden>
+          <p class="subtitle-eyebrow">Ký ức 2026</p>
+          <p class="subtitle-body">Có những ký ức không nên chỉ tồn tại trong quá khứ.</p>
+          <button class="subtitle-action control-btn" type="button">Tiếp tục →</button>
+        </div>
       </section>
     </main>
-    <script src="./main.js" defer></script>
+
+    <!-- ES Module Main Script -->
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

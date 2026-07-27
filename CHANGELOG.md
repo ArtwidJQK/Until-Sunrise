@@ -2,6 +2,26 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.4.0] - 2026-07-27
+
+### Added
+
+- Playable browser prototype implementation of Scene 001 (`SCN-001` — The Opening Memory Space) in `app/`.
+- Modular ES JavaScript architecture:
+  - `app/data/scene-001-data.js`: Anchor configs & memory prompts.
+  - `app/systems/scene-state.js`: State machine (`ENTRY` → `OBSERVING` → `FOCUSING` → `MEMORY_REVEAL` → `COMPLETE`).
+  - `app/systems/audio-manager.js`: Dependency-free Web Audio API synthesizer (room tone, rain ambience, hover sound, select tap, chord swell).
+  - `app/systems/interaction-manager.js`: Keyboard & mouse anchor event dispatcher.
+  - `app/components/viewport.js`: Room viewport, camera zoom & lamp light toggle.
+  - `app/components/subtitle-panel.js`: Subtitle & glassmorphism memory overlay panel.
+  - `app/main.js`: Main bootstrap connecting login flow to Scene 001 execution.
+
+### Changed
+
+- Updated `PROJECT_PLAN.md` TASK-0005 to `Complete`.
+- Updated `PROJECT_STATE.json` version to 0.4.0, completion to 80%, health to 98%.
+- Updated `Production_Status.md` and `HANDOVER.md`.
+
 ## [0.3.0] - 2026-07-27
 
 ### Added
