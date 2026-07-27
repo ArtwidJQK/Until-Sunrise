@@ -1,14 +1,14 @@
 {
   "project": "Until Sunrise",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "phase": "Product Development - Private Web App",
   "current_sprint": "Private Product Runtime",
-  "current_task": "TASK-0006: React/TypeScript storytelling product shell with private login and server-side scene progress.",
-  "completion": 92,
-  "repository_health": 98,
+  "current_task": "TASK-0006: COMPLETE. React/TypeScript product shell verified and refactored.",
+  "completion": 95,
+  "repository_health": 99,
   "blocked": false,
   "blocking_reason": null,
-  "last_agent": "Codex",
-  "last_update": "2026-07-27T23:59:00+07:00",
-  "next_recommended_task": "Specify Scene 002 from approved 2026 chronology, then replace product-shell story beats with scene-approved content and licensed final assets."
+  "last_agent": "Antigravity",
+  "last_update": "2026-07-27T18:11:39Z",
+  "next_recommended_task": "Deepen Scene 002 experience: add more beats and traces from approved 2026 chronology. Then consider Scene 003 or visual polish (scene-specific background overlays, transition improvements)."
 }
