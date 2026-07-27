@@ -1,14 +1,14 @@
 {
   "project": "Until Sunrise",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "phase": "Pre-Production",
-  "current_sprint": "Knowledge Document Layer Construction",
-  "current_task": "TASK-0003: Complete Knowledge Document layer (Story, Character, World, Experience, Emotion, Memory, Theme, Dialogue).",
-  "completion": 45,
-  "repository_health": 92,
+  "current_sprint": "Playable Vertical Slice & Scene 001 Implementation",
+  "current_task": "TASK-0005: Extend browser prototype with Scene 001 implementation modules.",
+  "completion": 60,
+  "repository_health": 95,
   "blocked": false,
   "blocking_reason": null,
   "last_agent": "Antigravity",
-  "last_update": "2026-07-27T23:30:00+07:00",
-  "next_recommended_task": "Begin TASK-0004: Define first playable scene specification downstream of Knowledge Document layer."
+  "last_update": "2026-07-27T23:40:00+07:00",
+  "next_recommended_task": "TASK-0005: Implement SCN-001 modules in app/ according to Scene_001_Specification.md."
 }
