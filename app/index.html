@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff8f2" />
+    <title>Until Sunrise</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app" class="app-shell" aria-labelledby="title">
+      <section class="login-scene" data-screen="login">
+        <div class="ambient ambient-left" aria-hidden="true"></div>
+        <div class="ambient ambient-right" aria-hidden="true"></div>
+
+        <header class="brand-lockup">
+          <p class="eyebrow">A quiet memory experience</p>
+          <h1 id="title">Until Sunrise</h1>
+          <p class="tagline">Beauty invites. Meaning remains.</p>
+        </header>
+
+        <div class="bear-stage" aria-label="Three soft companion bears">
+          <div class="bear-badge bear-rilakkuma" data-bear="rilakkuma">
+            <div class="bear-face"><i></i><i></i><b></b></div>
+            <span>Rilakkuma</span>
+          </div>
+          <div class="bear-badge bear-melody" data-bear="melody">
+            <div class="bear-face"><i></i><i></i><b></b><em></em></div>
+            <span>Melody</span>
+          </div>
+          <div class="bear-badge bear-stella" data-bear="stella">
+            <div class="bear-face"><i></i><i></i><b></b><em></em></div>
+            <span>Stella Lou</span>
+          </div>
+        </div>
+
+        <form id="login-form" class="login-panel">
+          <label for="player-name">Tên của bạn</label>
+          <div class="input-row">
+            <input id="player-name" name="playerName" autocomplete="nickname" placeholder="Một cái tên thật nhẹ nhàng" />
+            <button type="submit" aria-label="Bắt đầu trải nghiệm">Bắt đầu <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-note">Bạn có thể bước vào thật chậm.</p>
+        </form>
+
+        <footer class="scene-footer">
+          <span>01</span><span class="footer-line"></span><span>before sunrise</span>
+        </footer>
+      </section>
+
+      <section class="placeholder-scene" data-screen="placeholder" hidden>
+        <p class="eyebrow">A memory is waiting</p>
+        <h2 id="welcome-title">Chào mừng bạn.</h2>
+        <p class="placeholder-copy">Nội dung câu chuyện và scene đầu tiên đang được chuẩn bị.</p>
+        <button id="back-button" class="text-button" type="button">Quay lại</button>
+      </section>
+    </main>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
