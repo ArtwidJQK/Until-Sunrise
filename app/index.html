@@ -51,6 +51,17 @@
 
       <!-- SCENE 001 — THE OPENING MEMORY SPACE -->
       <section class="scene-001-container" data-screen="scene-001" hidden tabindex="-1">
+        <!-- Controls Bar -->
+        <div class="scene-controls-bar">
+          <button id="journal-open-btn" class="control-btn journal-trigger-btn" type="button" aria-label="Mở Nhật ký ký ức">
+            <span class="icon-journal">📖</span> <span class="journal-btn-text">Nhật ký [2/8]</span>
+          </button>
+          <button id="audio-toggle-btn" class="control-btn" type="button" aria-label="Bật/Tắt âm thanh">
+            <span class="icon-audio">🔊</span> <span class="audio-label">Âm thanh: Bật</span>
+          </button>
+          <button id="back-to-login-btn" class="control-btn text-link" type="button">Quay lại</button>
+        </div>
+
         <!-- Room Viewport -->
         <div id="room-viewport" class="room-viewport">
           <!-- Room Background Light & Dusk Gradient -->
@@ -95,14 +106,6 @@
           </div>
         </div>
 
-        <!-- Controls Bar -->
-        <div class="scene-controls-bar">
-          <button id="audio-toggle-btn" class="control-btn" type="button" aria-label="Bật/Tắt âm thanh">
-            <span class="icon-audio">🔊</span> <span class="audio-label">Âm thanh: Bật</span>
-          </button>
-          <button id="back-to-login-btn" class="control-btn text-link" type="button">Quay lại</button>
-        </div>
-
         <!-- Subtitle & Memory Reveal Panel (Glassmorphism Overlay) -->
         <div id="subtitle-panel" class="subtitle-panel" hidden>
           <p class="subtitle-eyebrow">Ký ức 2026</p>
@@ -110,6 +113,26 @@
           <button class="subtitle-action control-btn" type="button">Tiếp tục →</button>
         </div>
       </section>
+
+      <!-- MEMORY JOURNAL MODAL / DRAWER -->
+      <div id="memory-journal-modal" class="memory-journal-modal" hidden>
+        <div class="journal-card">
+          <div class="journal-header">
+            <div class="journal-title-group">
+              <span class="journal-badge">Nhật ký Ký ức</span>
+              <h2>Until Sunrise — Memory Bank</h2>
+              <p class="journal-progress">Ký ức: 2/8</p>
+            </div>
+            <button class="journal-close-btn control-btn" type="button" aria-label="Đóng nhật ký">✕ Đóng</button>
+          </div>
+          <div class="journal-content-layout">
+            <div class="journal-list"></div>
+            <div class="journal-detail">
+              <p class="empty-hint">Chọn một mốc ký ức để xem chi tiết.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- ES Module Main Script -->

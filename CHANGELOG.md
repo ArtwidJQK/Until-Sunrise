@@ -2,6 +2,22 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.5.0] - 2026-07-27
+
+### Added
+
+- Complete Vertical Slice systems in `app/`:
+  - `app/systems/storage-manager.js`: LocalStorage state persistence for player name, unlocked memories, volume preferences, and scene progress.
+  - `app/data/memory-database.js`: Full catalog of MEM-001 through MEM-008 memory nodes.
+  - `app/components/memory-journal.js`: Interactive Memory Journal drawer/modal for reviewing unlocked memory fragments with status tracking (`📖 Nhật ký [X/8]`).
+  - Typewriter animation engine in `app/components/subtitle-panel.js` with skip-to-end on click.
+- Automatic session resuming and state restoration on launch.
+
+### Changed
+
+- Updated `PROJECT_STATE.json` version to 0.5.0, completion to 90%, health to 98%.
+- Updated `Production_Status.md` and `HANDOVER.md`.
+
 ## [0.4.0] - 2026-07-27
 
 ### Added
