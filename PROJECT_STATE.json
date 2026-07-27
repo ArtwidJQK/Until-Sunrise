@@ -2,13 +2,13 @@
   "project": "Until Sunrise",
   "version": "0.7.0-beta",
   "phase": "Product Development - Beta",
-  "current_sprint": "QA & Bug Fixing",
-  "current_task": "QA audit complete. 9 bugs fixed. Downgraded from RC1: not yet release candidate quality.",
-  "completion": 78,
+  "current_sprint": "Polish & Technical Debt Reduction",
+  "current_task": "CSS rewrite (clean, no duplication), accessibility improvements, performance optimizations, version sync.",
+  "completion": 82,
   "repository_health": 100,
   "blocked": false,
   "blocking_reason": null,
   "last_agent": "Antigravity",
-  "last_update": "2026-07-28T01:30:00+07:00",
-  "next_recommended_task": "UX polish: scene transitions, animation quality. Then visual asset replacement (OQ-003). Then re-evaluate for RC."
+  "last_update": "2026-07-28T01:38:00+07:00",
+  "next_recommended_task": "Scene entry/exit transitions (full cinematic crossfade + background morph). Then evaluate for RC."
 }

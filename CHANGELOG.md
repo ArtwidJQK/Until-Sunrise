@@ -2,6 +2,22 @@
 
 This log is append-only. New production entries must be added above older entries.
 
+## [0.7.1-beta] - 2026-07-28
+
+### Changed
+
+- **CSS rewrite:** Replaced the single-line minified `styles.css` blob + appended fragments with one clean, readable, fully-commented stylesheet. Eliminated duplicate `.scene-glow` rule definitions.
+- **Focus styles:** Added visible `:focus-visible` rings on all interactive elements (buttons, trace chips, controls) for keyboard navigation accessibility.
+- **Input focus:** Added border highlight and soft glow on the password input focus state.
+- **Typography:** Reduced `h2` size clamp slightly for better balance. Trace chips changed to pill shape (border-radius 20px). Subtitle font-size now uses `clamp()` for responsive scaling.
+- **Progress bar:** Gradient fill and cubic-bezier easing on width transition.
+- **Trace chip style:** Warmer active state (amber tint instead of hard white/dark inversion).
+- **Memoization:** `totalBeats` and `completedBeats` are now memoized — progress bar no longer re-reduces on every render.
+- **Dead code removed:** Meaningless `(prev < scene.traces.length ? 0 : 0)` condition simplified to a direct `setTraceIndex(0)`.
+- **Accessibility:** Added `type="button"` to all `top-actions` buttons; `aria-valuenow/min/max` on the progress bar; `aria-hidden` on the scene number display; corrected nav `aria-label` to proper Vietnamese "Chương".
+- **Error strings:** Remaining ASCII-escaped error messages in `catch` blocks corrected to proper Vietnamese.
+- **Version sync:** `package.json` version updated from `0.2.0` to `0.7.0-beta` to match `PROJECT_STATE.json`.
+
 ## [0.7.0-beta] - 2026-07-28
 
 ### Fixed

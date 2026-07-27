@@ -156,13 +156,21 @@ export default function App() {
   const beat = scene.beats[beatIndex];
   const activeTrace = scene.traces[traceIndex];
   const chapters = useMemo(() => scenes.map((item) => item.chapter), []);
+  const totalBeats = useMemo(
+    () => scenes.reduce((acc, s) => acc + s.beats.length, 0),
+    []
+  );
+  const completedBeats = useMemo(
+    () => scenes.slice(0, sceneIndex).reduce((acc, s) => acc + s.beats.length, 0) + beatIndex + 1,
+    [sceneIndex, beatIndex]
+  );
 
   // Load server auth status on mount
   useEffect(() => {
     api
       .status()
       .then((state) => setHasAccount(state.hasAccount))
-      .catch(() => setError("Khong the ket noi voi khong gian rieng tu."));
+      .catch(() => setError("Không thể kết nối với không gian riêng tư."));
   }, []);
 
   // Restore scene progress from server
@@ -195,11 +203,11 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [scene.id, sessionToken]);
 
-  // Reset beat and trace when scene changes; clamp traceIndex defensively.
+  // Reset beat and trace on scene change
   useEffect(() => {
     setBeatIndex(0);
-    setTraceIndex((prev) => (prev < scene.traces.length ? 0 : 0));
-  }, [scene.id, scene.traces.length]);
+    setTraceIndex(0);
+  }, [scene.id]);
 
   // Auto-advance beats
   useEffect(() => {
@@ -228,7 +236,7 @@ export default function App() {
       setError(
         reason instanceof Error
           ? reason.message
-          : "Khong the mo khoa trai nghiem."
+          : "Không thể mở khóa trải nghiệm."
       );
     }
   };
@@ -340,18 +348,20 @@ export default function App() {
         <div className="top-actions">
           <span>{saved ? "Đã lưu" : "Đang lưu..."}</span>
           <button
+            type="button"
             aria-label="Bật hoặc tắt âm thanh nền"
             onClick={() => setSound(!sound)}
           >
             {sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </button>
           <button
+            type="button"
             aria-label="Bật hoặc tắt tự động chuyển subtitle"
             onClick={() => setAutoplay((value) => !value)}
           >
             {autoplay ? <Pause size={18} /> : <Play size={18} />}
           </button>
-          <button aria-label="Đăng xuất" onClick={logout}>
+          <button type="button" aria-label="Đăng xuất" onClick={logout}>
             <LogOut size={18} />
           </button>
         </div>
@@ -360,8 +370,8 @@ export default function App() {
       <div className="letterbox top" />
       <div className="letterbox bottom" />
 
-      <nav className="chapter-nav" aria-label="Chuong">
-        <span>{sceneIndex + 1}</span>
+      <nav className="chapter-nav" aria-label="Chương">
+        <span aria-hidden="true">{sceneIndex + 1}</span>
         <div>
           {chapters.map((chapter, index) => (
             <button
@@ -451,16 +461,8 @@ export default function App() {
         >
           <ArrowLeft size={19} /> Trước
         </button>
-        <div className="progress" role="progressbar" aria-label="Tiến độ trải nghiệm">
-          <span
-            style={{
-              width: `${
-                ((scenes.slice(0, sceneIndex).reduce((acc, s) => acc + s.beats.length, 0) + beatIndex + 1) /
-                  (scenes.reduce((acc, s) => acc + s.beats.length, 0))) *
-                100
-              }%`,
-            }}
-          />
+        <div className="progress" role="progressbar" aria-label="Tiến độ trải nghiệm" aria-valuenow={completedBeats} aria-valuemin={1} aria-valuemax={totalBeats}>
+          <span style={{ width: `${(completedBeats / totalBeats) * 100}%` }} />
         </div>
         <button
           className="control"
